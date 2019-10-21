@@ -12,9 +12,9 @@ interface IProps {
 class MainContent extends React.Component<IProps, {}> {
   render() {
     return (
-      <div className="cs-main-content">
+      <section className="cs-main-content">
         {this.props.children}
-      </div>
+      </section>
     )
   }
 }

@@ -1,0 +1,17 @@
+{
+  "parser": "babel-eslint",
+  "extends": ["react-app", "prettier", "plugin:jsx-a11y/recommended"],
+  "rules": {
+    "prettier/prettier": [
+      "error",
+      {
+        "singleQuote": true,
+        "jsxSingleQuote": false,
+        "printWidth": 80,
+        "bracketSpacing": true,
+        "jsxBracketSameLine": false
+      }
+    ]
+  },
+  "plugins": ["prettier", "jsx-a11y"]
+}

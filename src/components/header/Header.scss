@@ -1,0 +1,31 @@
+.cs-header {
+  height: 220px;
+  background: center no-repeat url("../../assets/img/header.jpg");
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+
+  @media (min-width: 768px) {
+    height: 420px;
+  }
+
+  &__heading {
+    color: #ffffff;
+    font-weight: 600;
+    position: relative;
+    z-index: 99;
+  }
+
+  &__overlay {
+    background-color: #2788e2;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    position: absolute;
+    z-index: 9;
+    opacity: 0.5;
+  }
+}

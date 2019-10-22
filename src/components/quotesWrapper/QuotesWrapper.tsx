@@ -1,9 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import './QuotesWrapper.scss';
 import AddQuote from '../addQuote/AddQuote';
 import QuotesList from '../quotesList/QuotesList';
-import ErrorMessage from '../errorMessage/ErrorMessage';
 
 type Quote = {
   quote: string;
@@ -11,8 +10,6 @@ type Quote = {
 }
 
 const Quotes: React.FunctionComponent = (props:any) => {
-  const [error, setError] = useState(false);
-  const [errorMessage, setErrorMessage] = useState('');
   const { quotes } = props.quotes;
 
   useEffect(() => {
@@ -34,21 +31,26 @@ const Quotes: React.FunctionComponent = (props:any) => {
       localStorage.setItem('csQuotes', JSON.stringify(quotesUpdate));
       props.setQuotes(quotesUpdate);
     } else {
-      setErrorMessage('The Quote already exist.');
-      setError(true);
-      setTimeout(() => {
-        setError(false);
-      }, 3000);
+      props.setErrors({form: true, message: "Quote already exists."});
+      setTimeout(()=> {
+        props.setErrors({form: false, message: ""})
+      }, 3000)
     }
   };
+
+  const handleErrors = (errors: any) => {
+    props.setErrors(errors);
+  }
+
   return (
-    <>
-      <ErrorMessage displayError={error} message={errorMessage} />
-      <div className="cs-quotes">
-        <QuotesList quotes={quotes} />
-        <AddQuote onHandleQuotes={handleQuotes} />
-      </div>
-    </>
+    <div className="cs-quotes">
+      <QuotesList quotes={quotes} />
+      <AddQuote
+        onHandleQuotes={handleQuotes}
+        onHandleErrors={handleErrors}
+        errors={props.errors}
+      />
+    </div>
   );
 };
 

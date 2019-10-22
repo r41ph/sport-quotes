@@ -3,16 +3,21 @@ import QuotesWrapper from "../components/quotesWrapper/QuotesWrapper";
 import {
   quotesAction
 } from "../actions/quotesAction";
+import {
+  errorsAction
+} from "../actions/errorsAction";
 
 const mapStateToProps = (reduxState: any) => {
   return {
-    quotes: reduxState.quotesReducer
+    quotes: reduxState.quotes,
+    errors: reduxState.errors
   };
 };
 
 const mapDispatchToProps = (dispatch: any) => {
   return {
-    setQuotes: (quotes: any) => dispatch(quotesAction(quotes))
+    setQuotes: (quotes: any) => dispatch(quotesAction(quotes)),
+    setErrors: (errors: any) => dispatch(errorsAction(errors))
   };
 };
 

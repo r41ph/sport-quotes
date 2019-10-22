@@ -9,28 +9,31 @@ type Quote = {
   person: string;
 }
 
+type Errors = {
+  form: boolean;
+  message?: string
+}
+
 interface IProps {
-  onHandleQuotes: (value: Quote) => void
+  onHandleQuotes: (value: Quote) => void;
+  onHandleErrors: (value: Errors) => void;
+  errors: Errors
 }
 
 const AddQuote: React.FunctionComponent<IProps> = props => {
   const {onHandleQuotes} = props;
   const [quote, setQuote] = useState("");
   const [person, setPerson] = useState("");
-  const [isError, setIsError] = useState(false);
-  const [errorMessage, setErrorMessage] = useState("");
 
   const handleQuotes = () => {
     if(quote && person) {
       onHandleQuotes({quote, person});
       setQuote("");
       setPerson("");
-      setIsError(false)
     } else {
-      setIsError(true);
-      setErrorMessage("Both fields are mandatory.");
+      props.onHandleErrors({form: true, message: "Both fields are mandatory."});
       setTimeout(()=> {
-        setIsError(false)
+        props.onHandleErrors({form: false, message: ""})
       }, 3000)
     }
   };
@@ -69,7 +72,7 @@ const AddQuote: React.FunctionComponent<IProps> = props => {
           Submit
         </Button>
       </form>
-      <ErrorMessage displayError={isError} message={errorMessage} />
+      <ErrorMessage displayError={props.errors.form} message={props.errors.message} />
     </div>
   );
 };

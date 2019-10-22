@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './ErrorMessage.scss';
 
 interface IProps {
@@ -6,28 +6,23 @@ interface IProps {
    * Specifies the error message 
    *
    */
-  message: string;
+  message: string | undefined;
   /**
    * Specifies the error message 
    *
    */
-  displayError: boolean;
-
-
+  displayError: boolean | undefined;
 }
 
-const ErrorMessage:React.FunctionComponent<IProps> = ({ message, displayError }) => {
-  const [error, setError] = useState(displayError);
-  return (
-    <>
-      {
-        displayError && 
-          (<div className={`cs-error ${displayError ? "cs-error__visible" : ""}`}>
-            {message}
-          </div>)
-      }
-    </>
-  )
-};
+const ErrorMessage:React.FunctionComponent<IProps> = ({ message, displayError }) =>  (
+  <>
+    {
+      displayError && 
+        (<div className="cs-error">
+          {message}
+        </div>)
+    }
+  </>
+)
 
 export default ErrorMessage;

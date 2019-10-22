@@ -2,7 +2,7 @@ import React from 'react';
 import './App.scss';
 import Header from './components/header/Header';
 import MainContent from './components/layout/mainContent/mainContent';
-import QuotesContainer from './components/quotesContainer/QuotesContainer';
+import QuotesContainer from './containers/QuotesContainer';
 
 function App() {
   return (

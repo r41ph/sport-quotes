@@ -1,8 +1,16 @@
 .cs-quotes {
   max-width: 1120px;
   margin: 0 auto;
-  padding: 50px 0;
+  padding: 50px 20px;
   display: grid;
-  grid-template-columns: 50% 50%;
-  column-gap: 47px;
+  grid-template-columns: 100%;
+
+  @media (min-width: 768px) {
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 4.19%;
+  }
+
+  @media (min-width: 1120px) {
+    padding: 50px 0;
+  }
 }

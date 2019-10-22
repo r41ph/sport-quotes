@@ -3,6 +3,11 @@
   box-shadow: 0px 0px 5px 0px rgba(50, 50, 50, 0.4);
   padding: 30px;
   height: 315px;
+  margin-top: 20px;
+
+  @media (min-width: 768px) {
+    margin-top: 0;
+  }
 
   .cs-add-quote__form {
     display: flex;

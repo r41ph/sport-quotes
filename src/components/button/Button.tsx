@@ -32,6 +32,7 @@ const Button:React.FunctionComponent<IProps> = props => {
 
   return (
     <button
+      type="button"
       onClick={handleClick}
       className={cssClasses}
       aria-label={ariaLabel}

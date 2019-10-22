@@ -12,7 +12,7 @@ function App() {
       <MainContent>
         <QuotesContainer />
       </MainContent>
-      <Footer />
+      <Footer copy="Sportlabs Technology Ltd. All rights reserved" />
     </div>
   );
 }

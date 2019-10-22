@@ -1,11 +1,15 @@
-import React from 'react';
+import React, { FunctionComponent } from 'react';
 import './Footer.scss';
 
-const Footer = () => {
+interface IProps {
+  copy: string
+}
+
+const Footer:FunctionComponent<IProps> = ({copy}) => {
   return (
     <footer className="cs-footer">
       <div className="cs-footer__content">
-        &copy; {(new Date().getFullYear())} Sportlabs Technology Ltd. All rights reserved
+        &copy; {new Date().getFullYear()} {copy}
       </div>
     </footer>
   )

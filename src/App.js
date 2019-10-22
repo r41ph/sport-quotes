@@ -3,6 +3,7 @@ import './App.scss';
 import Header from './components/header/Header';
 import MainContent from './components/layout/mainContent/mainContent';
 import QuotesContainer from './containers/QuotesContainer';
+import Footer from './components/footer/Footer';
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       <MainContent>
         <QuotesContainer />
       </MainContent>
+      <Footer />
     </div>
   );
 }

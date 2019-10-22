@@ -1,0 +1,28 @@
+.cs-add-quote {
+  background-color: #ffffff;
+  box-shadow: 0px 0px 5px 0px rgba(50, 50, 50, 0.4);
+  padding: 30px;
+  height: 315px;
+
+  .cs-add-quote__form {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .cs-input-field__label {
+    margin-bottom: 10px;
+
+    &:last-of-type {
+      margin-top: 10px;
+    }
+  }
+
+  .cs-button__quotes {
+    margin-top: 20px;
+  }
+
+  .cs-add-quote__heading {
+    margin-top: 0;
+    font-size: 18px;
+  }
+}

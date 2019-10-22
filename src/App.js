@@ -1,11 +1,16 @@
 import React from 'react';
 import './App.scss';
 import Header from './components/header/Header';
+import MainContent from './components/layout/mainContent/mainContent';
+import QuotesContainer from './components/quotesContainer/QuotesContainer';
 
 function App() {
   return (
     <div className="cs-app">
-      <Header heading="Sporting Quotes"/>
+      <Header heading="Sporting Quotes" />
+      <MainContent>
+        <QuotesContainer />
+      </MainContent>
     </div>
   );
 }

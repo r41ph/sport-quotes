@@ -1,0 +1,18 @@
+.cs-quote {
+  border-bottom: 1px solid #999;
+  padding: 25px 10px;
+
+  &:last-of-type {
+    border-bottom: none;
+  }
+
+  .cs-quote__quote {
+    margin-bottom: 20px;
+    font-size: 18px;
+    font-style: italic;
+  }
+
+  .cs-quote__person {
+    font-size: 14px;
+  }
+}

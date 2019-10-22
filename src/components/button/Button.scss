@@ -1,0 +1,13 @@
+.cs-button__quotes {
+  width: 75px;
+  border: 1px solid #2789e2;
+  background-color: #fff;
+  color: #2789e2;
+  padding: 14px 12px;
+  margin-bottom: 20px;
+
+  &:hover {
+    opacity: 0.8;
+    cursor: pointer;
+  }
+}

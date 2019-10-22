@@ -49,7 +49,6 @@ const Input:React.FunctionComponent<IProps> = props => {
     labelText = '',
     ariaLabel = '',
     value,
-    className: cssClasses = '',
     id = '',
     onHandleChange = () => {},
     required = false,
@@ -62,7 +61,7 @@ const Input:React.FunctionComponent<IProps> = props => {
   return (
     <>
       {labelText ? (
-        <label htmlFor={id} className="input-field__label">
+        <label htmlFor={id} className="cs-input-field__label">
           {labelText}
         </label>
       ) : null}
@@ -74,7 +73,7 @@ const Input:React.FunctionComponent<IProps> = props => {
         aria-label={ariaLabel}
         aria-required={required}
         required={required}
-        className={cssClasses}
+        className="cs-input-field"
         placeholder={placeholder}
       />
     </>

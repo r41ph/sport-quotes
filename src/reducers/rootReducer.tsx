@@ -1,5 +1,8 @@
 import { combineReducers } from 'redux';
-import quotesReducer from './quotesReducer';
+import quotes from './quotesReducer';
+import errors from './errorsReducer';
+
 export default combineReducers({
- quotesReducer
+ quotes,
+ errors
 });
